@@ -9,9 +9,9 @@ class AdminProductsController extends Controller
 
     private $products;
 
-	public function __construct(Product $producty)
+	public function __construct(Product $product)
 	{
-		$this->products = $producty;
+		$this->products = $product;
 	}
 	
 	public function index()
