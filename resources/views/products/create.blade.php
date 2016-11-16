@@ -15,6 +15,11 @@
     {!! From::open(['route'=>'products.store']) !!}
 	
 	<div class="form-group">
+		{!! From::label('category', 'Categoria:') !!}
+		{!! From::select('category_id', $categories, null) !!}
+	</div>
+
+	<div class="form-group">
 		{!! From::label('name', 'Name:') !!}
 		{!! From::text('name', null, ['class'=>'form-control']) !!}
 	</div>
@@ -59,6 +64,7 @@
 
 	<div>
 	{!! From::submit('Add Product', ['class'=>'btn btn-primary']) !!}
+	<a href="{{ route('products') }}" class="btn btn-default">Voltar</a>
 	</div>
 
     {!! From::close() !!}  

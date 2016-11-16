@@ -15,6 +15,11 @@
     {!! From::open(['route'=>['products.update', $product->id], 'method'=>'put']) !!}
 	
 	<div class="form-group">
+		{!! From::label('category', 'Categoria:') !!}
+		{!! From::select('category_id', $categories, $product->category->id) !!}
+	</div>
+
+	<div class="form-group">
 		{!! From::label('name', 'Name:') !!}
 		{!! From::text('name', $product->name, ['class'=>'form-control']) !!}
 	</div>
@@ -57,6 +62,7 @@
 	
 	<div>
 	{!! From::submit('Save Product', ['class'=>'btn btn-primary']) !!}
+	<a href="{{ route('products') }}" class="btn btn-default">Voltar</a>
 	</div>
 
     {!! From::close() !!}  
