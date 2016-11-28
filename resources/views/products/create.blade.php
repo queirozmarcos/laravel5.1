@@ -20,22 +20,22 @@
 	</div>
 
 	<div class="form-group">
-		{!! From::label('name', 'Name:') !!}
+		{!! From::label('name', 'Nome:') !!}
 		{!! From::text('name', null, ['class'=>'form-control']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! From::label('description', 'Description:') !!}
+		{!! From::label('description', 'Descrição:') !!}
 		{!! From::textarea('description', null, ['class'=>'form-control']) !!}
 	</div>
 	
 	<div class="form-group">
-		{!! From::label('price', 'Price:') !!}
+		{!! From::label('price', 'Preço:') !!}
 		{!! From::text('price', null, ['class'=>'form-control']) !!}
 	</div>
 	
     <div class="form-group">
-		{!! From::label('featured', 'Featured:') !!}
+		{!! From::label('featured', 'Disponível:') !!}
         <div class="radio">
             <label>
                 {!! From::radio('featured', 1, null) !!}
@@ -49,7 +49,7 @@
     </div>
 	
     <div class="form-group">
-		{!! From::label('recommend', 'Recommend:') !!}
+		{!! From::label('recommend', 'Recomendado:') !!}
         <div class="radio">
             <label>
                 {!! From::radio('recommend', 1, null) !!}
@@ -63,7 +63,7 @@
     </div>
 
 	<div>
-	{!! From::submit('Add Product', ['class'=>'btn btn-primary']) !!}
+	{!! From::submit('Gravar Produto', ['class'=>'btn btn-primary']) !!}
 	<a href="{{ route('products') }}" class="btn btn-default">Voltar</a>
 	</div>
 

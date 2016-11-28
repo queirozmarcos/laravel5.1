@@ -11,14 +11,14 @@
 	
 	<table class="table">
 	  <tr>
-	    <th>ID</th>
-		<th>Name</th>
-		<th>Description</th>
-	    <th>Price</th>
-	    <th>Featured</th>
-	    <th>Recommend</th>
+	    <th>Cód.</th>
+		<th>Nome</th>
+		<th>Descrição</th>
+	    <th>Preço</th>
+	    <th>Disponível</th>
+	    <th>Recomendado</th>
 		<th>Categoria</th>
-		<th>Action</th>
+		<th>Ação</th>
 	  </tr>
 	  
 	  @foreach($products as $product)
@@ -43,8 +43,9 @@
 		</td>
 		<td>{{ $product->category->name }}</td>
 		<td>
-		  <a href="{{ route('products.edit',['id'=>$product->id]) }}">Edit</a> | 
-		  <a href="{{ route('products.destroy',['id'=>$product->id]) }}">Delete</a>
+		  <a href="{{ route('products.edit',['id'=>$product->id]) }}">Editar</a> | 
+		  <a href="{{ route('products.images',['id'=>$product->id]) }}">Foto</a> | 
+		  <a href="{{ route('products.destroy',['id'=>$product->id]) }}">Apagar</a>
 		</td>
 	  </tr>
 	  @endforeach

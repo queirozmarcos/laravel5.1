@@ -20,17 +20,17 @@
 	</div>
 
 	<div class="form-group">
-		{!! From::label('name', 'Name:') !!}
+		{!! From::label('name', 'Nome:') !!}
 		{!! From::text('name', $product->name, ['class'=>'form-control']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! From::label('description', 'Description:') !!}
+		{!! From::label('description', 'Descrição:') !!}
 		{!! From::textarea('description', $product->description, ['class'=>'form-control']) !!}
 	</div>
 	
 	<div class="form-group">
-		{!! From::label('price', 'Price:') !!}
+		{!! From::label('price', 'Preço:') !!}
 		{!! From::text('price', $product->price, ['class'=>'form-control']) !!}
 	</div>
 	
@@ -61,7 +61,7 @@
     </div>
 	
 	<div>
-	{!! From::submit('Save Product', ['class'=>'btn btn-primary']) !!}
+	{!! From::submit('Salvar Produto', ['class'=>'btn btn-primary']) !!}
 	<a href="{{ route('products') }}" class="btn btn-default">Voltar</a>
 	</div>
 
