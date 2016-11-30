@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use CodeCommerce\Product;
 use CodeCommerce\Category;
 use CodeCommerce\ProductImage;
+use CodeCommerce\Tag;
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Requests\ProductRequest;
 use CodeCommerce\Http\Requests\ProductImageRequest;
@@ -42,7 +43,13 @@ class ProductsController extends Controller
 	{
 		$input = $request->all();
 		
-		$product = $this->productModel->fill($input);
+        $arrayTags = $this->tagToArray($input['tags']);
+
+//		$product = $this->productModel->fill($input);
+
+        $product = $this->productModel->create($request->all());
+
+        $product->tags()->sync($arrayTags);
 		
 		$product->save();
 
@@ -62,6 +69,16 @@ class ProductsController extends Controller
 	public function update(Requests\ProductRequest $request, $id)
 	{
 		$this->productModel->find($id)->update($request->all());
+
+		$input = $request->all();
+
+        $arrayTags = $this->tagToArray($input['tags']);
+
+		//        $arrayTags = $this->tagToArray($input['tags']);
+
+        $product = Product::find($id);
+
+        $product->tags()->sync($arrayTags);
 		
 		return redirect()->route('products');
 	}
@@ -104,12 +121,27 @@ class ProductsController extends Controller
 		$image = $productImage->find($id);
 		
 		if (file_exists(public_path() . '/uploads/'.$image->id.'.'.$image->extension))
-    		Storage::disk('public_local')->delete($image->id.'.'.$image->extension);
+    		  Storage::disk('public_local')->delete($image->id.'.'.$image->extension);
 		
 		$product = $image->product;
 		$image->delete();
 		
 		return redirect()->route('products.images', ['id'=>$product->id]);
 	}
+
+    private function tagToArray($tags)
+    {
+        $tags = explode(",", $tags);
+        $tags = array_map('trim', $tags);
+        $tagCollection = [];
+		
+		foreach ($tags as $tag)
+		{
+            $t = Tag::firstOrCreate(['name' => $tag]);
+            array_push($tagCollection, $t->id);
+        }
+		
+        return $tagCollection;
+    }
 
 }

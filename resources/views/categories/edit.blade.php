@@ -15,17 +15,17 @@
     {!! From::open(['route'=>['categories.update', $category->id], 'method'=>'put']) !!}
 	
 	<div class="form-group">
-		{!! From::label('name', 'Name:') !!}
+		{!! From::label('name', 'Nome:') !!}
 		{!! From::text('name', $category->name, ['class'=>'form-control']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! From::label('description', 'Description:') !!}
+		{!! From::label('description', 'Descrição:') !!}
 		{!! From::textarea('description', $category->description, ['class'=>'form-control']) !!}
 	</div>
 	
 	<div>
-	{!! From::submit('Save Category', ['class'=>'btn btn-primary']) !!}
+	{!! From::submit('Salvar Categoria', ['class'=>'btn btn-primary']) !!}
 	<a href="{{ route('categories') }}" class="btn btn-default">Voltar</a>
 	</div>
 

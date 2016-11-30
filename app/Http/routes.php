@@ -30,6 +30,11 @@ Route::get('/', function () {
 //Route::get('admin/categories', 'AdminCategoriesController@index');
 //Route::get('admin/products', 'AdminProductsController@index');
 
+Route::get('/', function ()
+{
+    return view('home');
+});
+
 Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function()
 {
 	
@@ -61,6 +66,17 @@ Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function()
 		Route::get('destroy/{id}/product', ['as'=>'products.images.destroy', 'uses'=>'ProductsController@destroyImage']);
 	});
   });
+});
+
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+Route::group(['prefix'=>'register', 'as'=>'register.'], function(){
+    Route::get('', ['as' => 'index', 'uses'=>'RegisterController@index']);
+    Route::post('store', ['as' => 'store', 'uses'=>'RegisterController@store']);
+    Route::post('address', ['as' => 'address', 'uses'=>'RegisterController@address']);
 });
 
 

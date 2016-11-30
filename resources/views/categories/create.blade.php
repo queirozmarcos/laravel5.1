@@ -15,17 +15,17 @@
     {!! From::open(['route'=>'categories.store']) !!}
 	
 	<div class="form-group">
-		{!! From::label('name', 'Name:') !!}
+		{!! From::label('name', 'Nome:') !!}
 		{!! From::text('name', null, ['class'=>'form-control']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! From::label('description', 'Description:') !!}
+		{!! From::label('description', 'Descrição:') !!}
 		{!! From::textarea('description', null, ['class'=>'form-control']) !!}
 	</div>
 	
 	<div>
-	{!! From::submit('Add Category', ['class'=>'btn btn-primary']) !!}
+	{!! From::submit('Gravar Caterogia', ['class'=>'btn btn-primary']) !!}
 	<a href="{{ route('categories') }}" class="btn btn-default">Voltar</a>
 	</div>
 

@@ -62,6 +62,11 @@
         </div>
     </div>
 
+	<div class="form-group">
+		{!! From::label('tags', 'Tags (separadas por vírgula ","):') !!}
+		{!! From::textarea('tags', null, ['class'=>'form-control']) !!}
+	</div>
+	
 	<div>
 	{!! From::submit('Gravar Produto', ['class'=>'btn btn-primary']) !!}
 	<a href="{{ route('products') }}" class="btn btn-default">Voltar</a>

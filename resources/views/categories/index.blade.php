@@ -11,10 +11,10 @@
 	
 	<table class="table">
 	  <tr>
-	    <th>ID</th>
-		<th>Name</th>
-		<th>Description</th>
-		<th>Action</th>
+	    <th>Cód.</th>
+		<th>Nome</th>
+		<th>Descrição</th>
+		<th>Ação</th>
 	  </tr>
 	  
 	  @foreach($categories as $category)
