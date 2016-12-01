@@ -30,10 +30,13 @@ Route::get('/', function () {
 //Route::get('admin/categories', 'AdminCategoriesController@index');
 //Route::get('admin/products', 'AdminProductsController@index');
 
-Route::get('/', function ()
-{
-    return view('home');
-});
+//Route::get('/', function ()
+//{
+//    return view('home');
+//});
+
+Route::get('/', 'StoreController@index');
+Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreController@category']);
 
 Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function()
 {

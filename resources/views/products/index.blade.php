@@ -15,7 +15,7 @@
 		<th>Nome</th>
 		<th>Descrição</th>
 	    <th>Preço</th>
-	    <th>Disponível</th>
+	    <th>Em Destaque</th>
 	    <th>Recomendado</th>
 		<th>Categoria</th>
 		<th>Ação</th>

@@ -35,7 +35,7 @@
 	</div>
 	
     <div class="form-group">
-		{!! From::label('featured', 'Disponível:') !!}
+		{!! From::label('featured', 'Em Destaque:') !!}
         <div class="radio">
             <label>
                 {!! From::radio('featured', 1, null) !!}
