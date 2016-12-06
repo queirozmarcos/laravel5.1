@@ -18,9 +18,9 @@
             <div class="single-products">
                 <div class="productinfo text-center">
 				    @if(count($feat->images))
-                      <img src="{{ url('uploads/'.$feat->images->first()->id.'.'.$feat->images->first()->extension) }}" alt="" width="200"/>
+                      <img src="{{ url('uploads/'.$feat->images->first()->id.'.'.$feat->images->first()->extension) }}" alt="" width="50" />
 				    @else
-                      <img src="{{ url('images/no-img.jpg') }}" alt="" width="200"/>
+                      <img src="{{ url('images/no-img.jpg') }}" alt="" width="50" />
 				    @endif
                     <h2>R$ {{ $feat->price }}</h2>
                     <p>{{ $feat->name }}</p>
@@ -55,9 +55,9 @@
             <div class="single-products">
                 <div class="productinfo text-center">
 				    @if(count($reco->images))
-                      <img src="{{ url('uploads/'.$reco->images->first()->id.'.'.$reco->images->first()->extension) }}" alt="" width="200"/>
+                      <img src="{{ url('uploads/'.$reco->images->first()->id.'.'.$reco->images->first()->extension) }}" alt="" width="50" />
 				    @else
-                      <img src="{{ url('images/no-img.jpg') }}" alt="" width="200"/>
+                      <img src="{{ url('images/no-img.jpg') }}" alt="" width="50" />
 				    @endif
                     <h2>R$ {{ $reco->price }}</h2>
                     <p>{{ $reco->name }}</p>
