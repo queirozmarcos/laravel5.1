@@ -22,7 +22,7 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> (19) 5555-5555</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> (22) 5555-5555</a></li>
                             <li><a href="#"><i class="fa fa-envelope"></i> atendimento@schoolofnet.com</a></li>
                         </ul>
                     </div>

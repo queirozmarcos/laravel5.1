@@ -8,6 +8,7 @@ use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 use CodeCommerce\Category;
 use CodeCommerce\Product;
+use CodeCommerce\Tag;
 
 class StoreController extends Controller
 {
@@ -36,4 +37,14 @@ class StoreController extends Controller
 		//dd($products);
         return view('store.category', compact('categories', 'products', 'category'));
     }
+	
+	public function tag($id)
+	{
+		$categories = Category::all();
+		$tag = Tag::find($id);
+		$products = $tag->products;
+		
+		return view('store.tag', compact('categories', 'products', 'tag'));
+		
+	}
 }
