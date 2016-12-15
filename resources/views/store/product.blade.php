@@ -46,13 +46,13 @@
 				    <a href="{{ route('store.tag', ['id' => $tag->id]) }}" class="label label-primary">{{ $tag->name }}</a>
 				  @endforeach
 				</p>
-                                <span>
-                                    <span>R$ {{ number_format($product->price,2,",",".") }}</span>
-                                        <a href="#" class="btn btn-fefault cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            Adicionar no Carrinho
-                                        </a>
-                                </span>
+				<span>
+                  <span>R$ {{ number_format($product->price,2,",",".") }}</span>
+                    <a href="{{ route('cart.add', ['id'=>$product->id]) }}" class="btn btn-fefault cart">
+                      <i class="fa fa-shopping-cart"></i>
+                      Adicionar no Carrinho
+                    </a>
+                </span>
             </div>
             <!--/product-information-->
         </div>

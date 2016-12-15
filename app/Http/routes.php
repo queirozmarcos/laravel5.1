@@ -39,6 +39,11 @@ Route::get('/', 'StoreController@index');
 Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreController@category']);
 Route::get('product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product']);
 Route::get('tag/{id}', ['as' => 'store.tag', 'uses' => 'StoreController@tag']);
+Route::get('cart', ['as' => 'cart', 'uses' => 'CartController@index']);
+Route::get('cart/add/{id}', ['as' => 'cart.add', 'uses' => 'CartController@add']);
+Route::get('cart/destroy/{id}', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
+Route::put('cart/update/{id}', ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
+// Route::get('cart', ['as' => 'store.cart', 'uses' => 'CartController@index']);
 
 Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function()
 {
