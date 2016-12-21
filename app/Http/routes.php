@@ -35,6 +35,8 @@ Route::get('/', function () {
 //    return view('home');
 //});
 
+Route::post('/home', 'StoreController@index');
+Route::get('/home', 'StoreController@index');
 Route::get('/', 'StoreController@index');
 Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreController@category']);
 Route::get('product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product']);
@@ -45,7 +47,9 @@ Route::get('cart/destroy/{id}', ['as' => 'cart.destroy', 'uses' => 'CartControll
 Route::put('cart/update/{id}', ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
 // Route::get('cart', ['as' => 'store.cart', 'uses' => 'CartController@index']);
 
-Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function()
+Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth_admin', 'where'=>['id'=>'[0-9]+']], function()
 {
 	
 

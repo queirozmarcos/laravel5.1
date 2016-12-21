@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container">
-    <h1>Listagem de Caterogias</h1>
+    <h1>Listagem de Categorias</h1>
 	
 	<br />
 	<a href="{{ route('categories.create') }}" class="btn btn-default">Nova Caterogia</a>
