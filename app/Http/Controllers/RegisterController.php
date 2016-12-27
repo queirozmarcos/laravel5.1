@@ -6,26 +6,31 @@ use CodeCommerce\Http\Controllers\Controller;
 use CodeCommerce\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class RegisterController extends Controller
 {
     private $userModel;
+
     public function __construct(User $user)
     {
         $this->userModel = $user;
     }
+
     public function index()
     {
 		$users = $this->userModel->All();
 		dd($users);
         return view('register.index', compact('users'));
     }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  Requests\CategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\RegisterRequest $request)
+
+	 public function store(Requests\RegisterRequest $request)
     {
         $input = $request->all();
         $data = [

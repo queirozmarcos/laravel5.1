@@ -63,6 +63,62 @@
                           </div>
                         </div>
 -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Endereço</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="address" id="address">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Número</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="number" id="number" maxlength="5">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Complemento</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="complement" id="complement">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Bairro</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="district" id="district">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Cidade</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="city" id="city">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Estado</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="state" id="state">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">País</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="country" id="country">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">CEP</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="cep" id="cep" maxlength="8">
+                                </div>
+                            </div>
+
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">

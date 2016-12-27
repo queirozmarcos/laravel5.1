@@ -42,16 +42,28 @@ Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreControlle
 Route::get('product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product']);
 Route::get('tag/{id}', ['as' => 'store.tag', 'uses' => 'StoreController@tag']);
 Route::get('cart', ['as' => 'cart', 'uses' => 'CartController@index']);
+
+
 Route::get('cart/add/{id}', ['as' => 'cart.add', 'uses' => 'CartController@add']);
 Route::get('cart/destroy/{id}', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
 Route::put('cart/update/{id}', ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
 // Route::get('cart', ['as' => 'store.cart', 'uses' => 'CartController@index']);
 
-Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+// Tem que estar autenticado
+Route::group(['middleware'=>'auth'], function()
+{
+  Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+  Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
+});
 
 Route::group(['prefix'=>'admin', 'middleware'=>'auth_admin', 'where'=>['id'=>'[0-9]+']], function()
 {
 	
+Route::get('user', ['as' => 'user.index', 'uses' => 'UserController@index']);
+Route::put('user/{id}/update/', ['as'=>'user.update', 'uses'=>'UserController@update']);
+
+Route::get('order', ['as' => 'order.index', 'uses' => 'OrderController@index']);
+Route::put('order/{id}/update/', ['as'=>'order.update', 'uses'=>'OrderController@update']);
 
   Route::group(['prefix'=>'categories'], function()
   {

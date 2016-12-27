@@ -52,14 +52,16 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Minha conta</a></li>
-                            <li><a href="http://commerce.dev:10088/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
+                            <li><a href="{{ route('account.orders') }}"><i class="fa fa-user"></i> Minha conta</a></li>
+                            <li><a href="{{ route('checkout.place') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
 							@if(Auth::guest())
 								<li><a href="/auth/login"><i class="fa fa-lock"></i> Login</a></li>
 						    @else
 								<li><a href="/auth/logout"><i class="fa fa-lock"></i> Sair ({{ Auth::user()->name }})</a></li>
 							@endif
+							<li><a href="{{ route('user.index') }}" class="btn btn-success">Usuários</a></li>
+							<li><a href="{{ route('order.index') }}" class="btn btn-success">Pedidos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -84,7 +86,7 @@
                             <li><a href="/" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Loja<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Productos</a></li>
+                                    <li><a href="shop.html">Produtos</a></li>
                                     <li><a href="product-details.html">Detalhes</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="cart.html">Carrinho</a></li>
@@ -92,7 +94,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a href="contact-us.html">Contato</a></li>
                         </ul>
                     </div>
                 </div>
