@@ -105,6 +105,7 @@ Route::group(['prefix'=>'register', 'as'=>'register.'], function(){
     Route::post('address', ['as' => 'address', 'uses'=>'RegisterController@address']);
 });
 
+Route::get('test', 'CheckoutController@test');
 
 /*
 Route::pattern('category','[0-9]+');
